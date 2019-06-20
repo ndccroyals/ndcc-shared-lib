@@ -1,3 +1,4 @@
+final ndcc-shared-lib = library('ndcc-shared-lib')
 node {
  //  def mvnHome
    def gradleHome
