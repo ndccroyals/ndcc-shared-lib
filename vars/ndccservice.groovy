@@ -1,41 +1,39 @@
 #!/usr/bin/env groovy
-
-
-/**def call() {
-  // Do something here...
-}**/
-
-
 node {
- //  def mvnHome
+   def mvnHome
    def gradleHome
+   def dockerHome
 	
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/ndccroyals/ndcc-service-login.git'
+      git'https://github.com/ndccroyals/ndcc-service-registration.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-     // mvnHome = tool 'M3'
-      gradleHome = tool 'gradle'	   
+      mvnHome = tool 'M3'
+      gradleHome = tool 'gradle'
+      dockerHome = tool 'DOCKER_HOME'	   
    }
- /*  stage('Build') {
-       Run the maven build
+   stage('Build') {
+      // Run the maven build
       if (isUnix()) {
-        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+	      
       } else {
-        bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
-   }*/
-  /* stage('gradle build') {
+   }
+   stage('gradle build') {
         if (isUnix()){
-		sh "'${gradleHome}/bin/gradle clean build'"
+		//sh "'${gradleHome}/bin/gradle clean'"
+		sh "./gradlew clean build"
+		sh "sudo /usr/local/bin/docker build -t ndcc ."
 		} else {
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
 		   
-     // junit target/surefire-reports/TEST-*.xml'
+     // junit '**/target/surefire-reports/TEST-*.xml'
      // archive 'target/*.jar'
   // }
    
