@@ -1,4 +1,12 @@
-node {
+#!/usr/bin/env groovy
+
+
+def call() {
+  // Do something here...
+}
+
+
+/*node {
  //  def mvnHome
    def gradleHome
 	
@@ -19,7 +27,7 @@ node {
         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }*/
-   stage('gradle build') {
+  /* stage('gradle build') {
         if (isUnix()){
 		sh "'${gradleHome}/bin/gradle clean build'"
 		} else {
@@ -27,8 +35,8 @@ node {
 		   }
 		   }
 		   
-     // junit '**/target/surefire-reports/TEST-*.xml'
+     // junit target/surefire-reports/TEST-*.xml'
      // archive 'target/*.jar'
   // }
    
-}
+}*/
