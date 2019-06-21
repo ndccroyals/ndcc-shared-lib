@@ -39,4 +39,4 @@ node {
      // archive 'target/*.jar'
   // }
    
-}*/
+}
