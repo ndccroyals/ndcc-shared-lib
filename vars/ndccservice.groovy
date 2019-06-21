@@ -1,5 +1,6 @@
    def mvnHome
    def gradleHome
+pipeline {
 stages {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
@@ -26,4 +27,5 @@ stages {
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
+}
 }
