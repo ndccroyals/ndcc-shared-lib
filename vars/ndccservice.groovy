@@ -1,12 +1,12 @@
 #!/usr/bin/env groovy
 
 
-def call() {
+/**def call() {
   // Do something here...
-}
+}**/
 
 
-/*node {
+node {
  //  def mvnHome
    def gradleHome
 	
