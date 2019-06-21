@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 node {
-   def mvnHome
-   def gradleHome
-   def dockerHome
+   //def mvnHome
+   //def gradleHome
+   //def dockerHome
 	
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
