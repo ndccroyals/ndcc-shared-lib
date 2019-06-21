@@ -1,4 +1,3 @@
-node {
    def mvnHome
    def gradleHome
    stage('Preparation') { // for display purposes
@@ -26,7 +25,4 @@ node {
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
-      junit '---**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
-   }
    
