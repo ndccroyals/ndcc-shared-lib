@@ -8,8 +8,8 @@ stages {
       // **       in the global configuration.
 	   
 	   steps {	   
-      mvnHome = tool 'M3'
-      gradleHome = tool 'gradle'
+      def mvnHome = tool 'M3'
+      def gradleHome = tool 'gradle'
 	   }
    }
 }
